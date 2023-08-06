@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+ <Import Project="$(BuildDir)resource.targets" />
+
+ <PropertyGroup>
+  <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  <DocumentationFile Condition=" '$(DocumentationFile)' == '' " >$([System.IO.Path]::Combine('bin',$(Configuration),$(TargetFramework),$(AssemblyName))).xml</DocumentationFile>
+ </PropertyGroup>
+
+ <PropertyGroup Condition=" '$(IsTestProject)' == 'true' ">
+  <NoWarn>$(NoWarn),1573,1591,1712</NoWarn>
+ </PropertyGroup>
+
+ <ImportGroup Condition=" '$(IsSharedProject)' == 'false' AND '$(IsTestProject)' == 'false' ">
+  <Import Project="$(BuildDir)file-version.targets" />
+  <Import Project="$(BuildDir)nuget.targets" />
+ </ImportGroup>
+
+ <ImportGroup Condition=" '$(IsSharedProject)' == 'false' AND '$(IsTestProject)' == 'true' ">
+  <Import Project="$(BuildDir)test.targets" />
+ </ImportGroup>
+
+</Project>

@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches-ignore:
+      - 'dependabot/**'
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 8 * * 1'
+
+jobs:
+  ci:
+    name: CI
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      checks: write
+      pull-requests: write
+      security-events: write
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Install .NET
+      uses: actions/setup-dotnet@v3
+      with:
+       dotnet-version: '7.0.x'
+
+    - name: Build and Test
+      run: dotnet test --logger:junit --results-directory out
+
+    # REF: https://github.com/marketplace/actions/publish-test-results
+
+    - name: Publish Test Results
+      uses: EnricoMi/publish-unit-test-result-action@v2
+      if: always()
+      with:
+        files: |
+          out/*.xml

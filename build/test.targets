@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+ <ItemGroup Condition=" '$(IsSharedProject)' == 'false' ">
+  <PackageReference Include="FluentAssertions" Version="6.11.0" />
+  <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.0-*" />
+  <PackageReference Include="Moq" Version="4.18.4" />
+  <PackageReference Include="xunit" Version="2.5.0" />
+  <PackageReference Include="xunit.runner.visualstudio" Version="2.5.0" />
+  <PackageReference Include="JunitXml.TestLogger" Version="3.0.134" /> <!-- for github actions ci -->
+ </ItemGroup>
+
+ <ItemGroup>
+  <Using Include="FluentAssertions" />
+  <Using Include="Moq" />
+  <Using Include="Xunit" />
+  <Using Include="Xunit.Abstractions" />
+ </ItemGroup>
+
+</Project>

@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+ <PropertyGroup>
+  <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+  <RootNamespace>DryIoc.Microsoft.DependencyInjection</RootNamespace>
+ </PropertyGroup>
+
+ <ItemGroup>
+  <PackageReference Include="DryIoc.Microsoft.DependencyInjection" Version="6.2.0" />
+ </ItemGroup>
+
+ <ItemGroup>
+   <ProjectReference Include="..\More.Extensions.DependencyInjection.Keyed\More.Extensions.DependencyInjection.Keyed.csproj" />
+ </ItemGroup>
+
+</Project>

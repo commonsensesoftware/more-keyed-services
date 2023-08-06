@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+ <PropertyGroup>
+  <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+  <RootNamespace>More.Extensions.DependencyInjection</RootNamespace>
+ </PropertyGroup>
+
+ <ItemGroup>
+  <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
+  <PackageReference Include="LightInject.Microsoft.DependencyInjection" Version="3.7.1" />
+  <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+  <PackageReference Include="Unity.Microsoft.DependencyInjection" Version="5.11.5" />
+ </ItemGroup>
+
+ <ItemGroup>
+  <ProjectReference Include="..\..\src\More.Extensions.DependencyInjection.Keyed\More.Extensions.DependencyInjection.Keyed.csproj" />
+  <ProjectReference Include="..\..\src\More.DryIoc.Extensions.DependencyInjection.Keyed\More.DryIoc.Extensions.DependencyInjection.Keyed.csproj" />
+  <ProjectReference Include="..\..\src\More.Grace.Extensions.DependencyInjection.Keyed\More.Grace.Extensions.DependencyInjection.Keyed.csproj" />
+  <ProjectReference Include="..\..\src\More.Lamar.Extensions.DependencyInjection.Keyed\More.Lamar.Extensions.DependencyInjection.Keyed.csproj" />
+  <ProjectReference Include="..\..\src\More.Stashbox.Extensions.DependencyInjection.Keyed\More.Stashbox.Extensions.DependencyInjection.Keyed.csproj" />
+  <ProjectReference Include="..\..\src\More.StructureMap.Extensions.DependencyInjection.Keyed\More.StructureMap.Extensions.DependencyInjection.Keyed.csproj" />
+ </ItemGroup>
+
+</Project>

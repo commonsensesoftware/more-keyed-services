@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+ <PropertyGroup>
+  <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+  <RootNamespace>Lamar.Microsoft.DependencyInjection</RootNamespace>
+ </PropertyGroup>
+
+ <ItemGroup>
+  <PackageReference Include="Lamar.Microsoft.DependencyInjection" Version="12.0.0" />
+ </ItemGroup>
+
+ <ItemGroup>
+   <ProjectReference Include="..\More.Extensions.DependencyInjection.Keyed\More.Extensions.DependencyInjection.Keyed.csproj" />
+ </ItemGroup>
+
+</Project>

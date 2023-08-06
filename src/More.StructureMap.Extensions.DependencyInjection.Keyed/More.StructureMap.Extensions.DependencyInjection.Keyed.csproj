@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+ <PropertyGroup>
+  <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+  <RootNamespace>StructureMap</RootNamespace>
+ </PropertyGroup>
+
+ <ItemGroup>
+  <PackageReference Include="StructureMap.Microsoft.DependencyInjection" Version="2.0.0" />
+ </ItemGroup>
+
+ <ItemGroup>
+   <ProjectReference Include="..\More.Extensions.DependencyInjection.Keyed\More.Extensions.DependencyInjection.Keyed.csproj" />
+ </ItemGroup>
+
+</Project>
