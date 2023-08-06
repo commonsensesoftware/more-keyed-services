@@ -343,7 +343,7 @@ public void ConfigureServices(IServiceCollection collection)
 
     // keyed open generics
     services.AddTransient(typeof(IGeneric<>), typeof(Generic<>));
-    services.AddSingleton(typeof(IDependency<,>), typeof(GenericDependency<,>));
+    services.AddSingleton(typeof(IKeyed<,>), typeof(KeyedOpenGeneric<,>));
 
     // keyed IEnumerable<T>
     services.TryAddEnumerable<Key.Thingies, IThing, Thing1>(ServiceLifetime.Transient);
@@ -362,10 +362,9 @@ public void ConfigureServices(IServiceCollection collection)
     var thingies = provider.GetServices<Key.Thingies, IThing>();
 
     // related services such as IServiceProviderIsService
-    // new extension methods could be added to make this more succinct
     var query = provider.GetRequiredService<IServiceProviderIsService>();
-    var thing1Registered = query.IsService(typeof(IDependency<Key.Thing1, IThing>));
-    var thing2Registered = query.IsService(typeof(IDependency<Key.Thing2, IThing>));
+    var thing1Registered = query.IsService<Key.Thing1, IThing>();
+    var thing2Registered = query.IsService(typeof(Key.Thing2), typeof(IThing));
 }
 ```
 
