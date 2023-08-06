@@ -107,6 +107,32 @@ public static class ServiceProviderExtensions
         }
     }
 
+    /// <summary>
+    /// Determines if the specified service type is available from the <see cref="IServiceProvider"/>.
+    /// </summary>
+    /// <typeparam name="TKey">The type of key.</typeparam>
+    /// <typeparam name="TService">The type of service.</typeparam>
+    /// <param name="serviceProvider">The extended <see cref="IServiceProviderIsService">service provider</see>.</param>
+    /// <returns>true if the specified service is a available, false if it is not.</returns>
+    public static bool IsService<TKey, TService>( this IServiceProviderIsService serviceProvider ) where TService : notnull
+    {
+        ArgumentNullException.ThrowIfNull( serviceProvider, nameof( serviceProvider ) );
+        return serviceProvider.IsService( KeyedType.Create<TKey, TService>() );
+    }
+
+    /// <summary>
+    /// Determines if the specified service type is available from the <see cref="IServiceProvider"/>.
+    /// </summary>
+    /// <param name="serviceProvider">The extended <see cref="IServiceProviderIsService">service provider</see>.</param>
+    /// <param name="keyType">The key type.</param>
+    /// <param name="serviceType">The service type.</param>
+    /// <returns>true if the specified service is a available, false if it is not.</returns>
+    public static bool IsService( this IServiceProviderIsService serviceProvider, Type keyType, Type serviceType )
+    {
+        ArgumentNullException.ThrowIfNull( serviceProvider, nameof( serviceProvider ) );
+        return serviceProvider.IsService( KeyedType.Create( keyType, serviceType ) );
+    }
+
     [MethodImpl( MethodImplOptions.AggressiveInlining )]
     private static NotSupportedException NoSuchService( Type key, Type serviceType ) =>
         new( $"No service of type {serviceType.Name} with key {key.Name} could be found." );
