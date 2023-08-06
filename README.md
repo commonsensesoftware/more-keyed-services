@@ -210,7 +210,8 @@ for all container frameworks:
 ```c#
 public static class ServiceCollectionExtensions
 {
-    public static IServiceCollection AddSingleton<TKey, TService, TImplementation>(this IServiceCollection services)
+    public static IServiceCollection AddSingleton<TKey, TService, TImplementation>(
+        this IServiceCollection services)
         where TService : class
         where TImplementation : class, TService;
 
@@ -220,7 +221,8 @@ public static class ServiceCollectionExtensions
         Type serviceType,
         Type implementationType);
 
-    public static IServiceCollection TryAddSingleton<TKey, TService, TImplementation>(this IServiceCollection services)
+    public static IServiceCollection TryAddSingleton<TKey, TService, TImplementation>(
+        this IServiceCollection services)
         where TService : class
         where TImplementation : class, TService;
 
@@ -230,7 +232,8 @@ public static class ServiceCollectionExtensions
         Type serviceType,
         Type implementationType);
 
-    public static IServiceCollection AddTransient<TKey, TService, TImplementation>(this IServiceCollection services)
+    public static IServiceCollection AddTransient<TKey, TService, TImplementation>(
+        this IServiceCollection services)
         where TService : class
         where TImplementation : class, TService;
 
@@ -240,7 +243,8 @@ public static class ServiceCollectionExtensions
         Type serviceType,
         Type implementationType);
 
-    public static IServiceCollection TryAddTransient<TKey, TService, TImplementation>(this IServiceCollection services)
+    public static IServiceCollection TryAddTransient<TKey, TService, TImplementation>(
+        this IServiceCollection services)
         where TService : class
         where TImplementation : class, TService;
 
@@ -250,7 +254,8 @@ public static class ServiceCollectionExtensions
         Type serviceType,
         Type implementationType);
 
-    public static IServiceCollection AddScoped<TKey, TService, TImplementation>(this IServiceCollection services)
+    public static IServiceCollection AddScoped<TKey, TService, TImplementation>(
+        this IServiceCollection services)
         where TService : class
         where TImplementation : class, TService;
 
@@ -260,7 +265,8 @@ public static class ServiceCollectionExtensions
         Type serviceType,
         Type implementationType);
 
-    public static IServiceCollection TryAddScoped<TKey, TService, TImplementation>(this IServiceCollection services)
+    public static IServiceCollection TryAddScoped<TKey, TService, TImplementation>(
+        this IServiceCollection services)
         where TService : class
         where TImplementation : class, TService;
 
