@@ -32,7 +32,7 @@
    <ReleaseNotesFile>$(MSBuildProjectDirectory)\ReleaseNotes.txt</ReleaseNotesFile>
    <GitHubReleaseTag Condition=" '$(GitHubReleaseTag)' == '' AND '$(PackageVersion.IndexOf(`-`))' == '-1' ">$(PackageVersion.Substring(0,$(PackageVersion.LastIndexOf('.')))).0</GitHubReleaseTag>
    <GitHubReleaseTag Condition=" '$(GitHubReleaseTag)' == '' ">$(PackageVersion)</GitHubReleaseTag>
-   <PackageReleaseNotes>https://github.com/dotnet/aspnet-api-versioning/releases/tag/v$(GitHubReleaseTag)</PackageReleaseNotes>
+   <PackageReleaseNotes>https://github.com/commonsensesoftware/more-keyed-services/releases/tag/v$(GitHubReleaseTag)</PackageReleaseNotes>
   </PropertyGroup>
 
   <!-- if there is banner text, merge as one big string
