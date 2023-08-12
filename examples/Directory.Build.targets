@@ -2,5 +2,6 @@
  <Import Project="$([MSBuild]::GetPathOfFileAbove($(MSBuildThisFile),'$(MSBuildThisFileDirectory)../'))"/>
  <PropertyGroup>
   <RootNamespace>Keyed.DI.Example</RootNamespace>
+  <IsPackable>false</IsPackable>
  </PropertyGroup>
 </Project>
