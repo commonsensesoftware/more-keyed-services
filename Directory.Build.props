@@ -13,15 +13,19 @@
   <IsPackable>true</IsPackable>
   <IsPackable Condition=" '$(IsSharedProject)' == 'true' ">false</IsPackable>
   <IsTestProject>$(MSBuildProjectName.EndsWith('Tests'))</IsTestProject>
+  <IsExampleProject>$(MSBuildProjectName.EndsWith('Example'))</IsExampleProject>
  </PropertyGroup>
 
  <ImportGroup Condition=" '$(IsSharedProject)' == 'false' ">
   <Import Project="$(BuildDir)common.props" />
   <Import Project="$(BuildDir)assembly-info.props" />
+ </ImportGroup>
+
+ <ImportGroup Condition=" '$(IsExampleProject)' == 'false' ">
   <Import Project="$(BuildDir)code-analysis.props" />
  </ImportGroup>
 
- <ImportGroup Condition=" '$(IsSharedProject)' == 'false' AND '$(IsTestProject)' == 'false' ">
+ <ImportGroup Condition=" '$(IsSharedProject)' == 'false' AND '$(IsTestProject)' == 'false' AND '$(IsExampleProject)' == 'false' ">
   <Import Project="$(BuildDir)nuget.props" />
  </ImportGroup>
 
