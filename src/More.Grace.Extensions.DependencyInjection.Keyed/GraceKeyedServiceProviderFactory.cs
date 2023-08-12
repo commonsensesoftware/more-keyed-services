@@ -29,7 +29,7 @@ public sealed class GraceKeyedServiceProviderFactory : IServiceProviderFactory<I
     /// <inheritdoc />
     public void Dispose()
     {
-        if (disposed)
+        if ( disposed )
         {
             return;
         }
