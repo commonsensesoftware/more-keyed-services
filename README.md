@@ -391,17 +391,17 @@ repository `README.md` are supported.
 | StructureMap | :white_check_mark: | :white_check_mark:   | :white_check_mark: | :white_check_mark:        | :white_check_mark: | :white_check_mark:    |  :white_check_mark:         |
 | Unity        | :white_check_mark: | :white_check_mark:   | :white_check_mark: | :white_check_mark:        | :white_check_mark: | :white_check_mark:    |  :white_check_mark:         |
 
-| Container    | No Adatper<br/>Changes | Example<br/>Project                                       |
-| ------------ | ---------------------- | --------------------------------------------------------- |
-| Autofac      | :white_check_mark:     | [view](../../tree/main/examples/Autofac.Example)      |
-| Default      | :white_check_mark:     | [view](../../tree/main/examples/Default.Example)      |
-| DryIoc       | :x:                    | [view](../../tree/main/examples/DryIoc.Example)       |
-| Grace        | :x:<sup>1</sup>        | [view](../../tree/main/examples/Grace.Example)        |
-| Lamar        | :x:                    | [view](../../tree/main/examples/Lamar.Example)        |
-| LightInject  | :white_check_mark:     | [view](../../tree/main/examples/LightInject.Example)  |
-| Stashbox     | :x:                    | [view](../../tree/main/examples/Stashbox.Example)     |
-| StructureMap | :x:                    | [view](../../tree/main/examples/StructureMap.Example) |
-| Unity        | :white_check_mark:     | [view](../../tree/main/examples/Unity.Example)        |
+| Container    | No Adatper<br/>Changes | Example<br/>Project                                              |
+| ------------ | ---------------------- | ---------------------------------------------------------------- |
+| Autofac      | :white_check_mark:     | [view](../../tree/main/examples/Autofac.Example/Program.cs)      |
+| Default      | :white_check_mark:     | [view](../../tree/main/examples/Default.Example/Program.cs)      |
+| DryIoc       | :x:                    | [view](../../tree/main/examples/DryIoc.Example/Program.cs)       |
+| Grace        | :x:<sup>1</sup>        | [view](../../tree/main/examples/Grace.Example/Program.cs)        |
+| Lamar        | :x:                    | [view](../../tree/main/examples/Lamar.Example/Program.cs)        |
+| LightInject  | :white_check_mark:     | [view](../../tree/main/examples/LightInject.Example/Program.cs)  |
+| Stashbox     | :x:                    | [view](../../tree/main/examples/Stashbox.Example/Program.cs)     |
+| StructureMap | :x:                    | [view](../../tree/main/examples/StructureMap.Example/Program.cs) |
+| Unity        | :white_check_mark:     | [view](../../tree/main/examples/Unity.Example/Program.cs)        |
 
 <sub>[1]: Only _Implementation Factory_ doesn't work out-of-the-box</sub>
 
