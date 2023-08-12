@@ -20,7 +20,8 @@ public sealed class DryIocKeyedServiceProviderFactory : IServiceProviderFactory<
     public DryIocKeyedServiceProviderFactory(
            IContainer? container = null,
            Func<IRegistrator, ServiceDescriptor, bool>? registerDescriptor = null ) :
-           this( container, RegistrySharing.CloneAndDropCache, registerDescriptor ) { }
+           this( container, RegistrySharing.CloneAndDropCache, registerDescriptor )
+    { }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="DryIocKeyedServiceProviderFactory"/> class.
@@ -39,8 +40,6 @@ public sealed class DryIocKeyedServiceProviderFactory : IServiceProviderFactory<
     {
         var keyedServices = services.RemoveKeyedServices();
         var container = inner.CreateBuilder( services );
-
-        container.Populate( services );
 
         if ( keyedServices.Count > 0 )
         {
